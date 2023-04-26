@@ -7,6 +7,8 @@ class ColorUtils{
   static final Color BAE5EF_lite = Color(0xffd0f8ff);
   static final Color F06666 = Color(0xffF06666);
   static final Color l273262 = Color(0xff273262);
+  static final Color flatButtom = Color(0xff4E51BF);
+  static final Color backGround = Color(0xffEFF7F9);
 
 //todo this general
   static const colorBlack = Color(0xFF000000);

@@ -22,13 +22,12 @@ class MyApp extends StatelessWidget {
       return MaterialApp(
         locale: const Locale('ar'),
         debugShowCheckedModeBanner: false,
-        // onGenerateRoute: AppRouts.OnGenerateRout,
+         onGenerateRoute: AppRouts.OnGenerateRout,
           title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: MainScreen(),
-      );
+       );
     },);
   }
 }
