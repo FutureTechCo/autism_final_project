@@ -29,17 +29,35 @@ class Community extends StatelessWidget {
                 Expanded(
                   child: Container(
                     width: 300.w,
-                    height: 40.h,
-                    decoration: BoxDecoration(
+                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(16.r),
                         border: Border.all(
                             color: ColorUtils.BorderColor, width: 2.w)),
                     child: Stack(
                       children: [
+                        Padding(
+                          padding:   EdgeInsets.only(right: 10.h),
+                          child: Directionality(
+                            textDirection: TextDirection.rtl,
+                            child: TextField(
+                          style: TextStyle(
+                              fontFamily: ConstVariable.FontFamily,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 14.sp),
+                          decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: 'بحث',
+                              hintStyle: TextStyle(
+                                  fontFamily: ConstVariable.FontFamily,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14.sp)),
+                            ),
+                          ),
+                        ),
                         Positioned(
-                          left: 4.h,
-                          bottom: 3.h,
+                          left: 10.h,
+                          bottom:11.h,
                           child: GestureDetector(
                             onTap: () {},
                             child: Container(
@@ -54,30 +72,6 @@ class Community extends StatelessWidget {
                                 color: Colors.blue,
                               ),
                             ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(right: 12.h, top: 13.h),
-                          child: Column(
-                            children: [
-                              Expanded(
-                                  child: Directionality(
-                                textDirection: TextDirection.rtl,
-                                child: TextField(
-                                  style: TextStyle(
-                                      fontFamily: ConstVariable.FontFamily,
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 14.sp),
-                                  decoration: InputDecoration(
-                                      border: InputBorder.none,
-                                      hintText: 'بحث',
-                                      hintStyle: TextStyle(
-                                          fontFamily: ConstVariable.FontFamily,
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 14.sp)),
-                                ),
-                              )),
-                            ],
                           ),
                         ),
                       ],

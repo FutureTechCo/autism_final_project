@@ -1,8 +1,10 @@
+import 'package:autism_final_project/Controller/GetXController/GetXBinding.dart';
 import 'package:autism_final_project/MainScreens/MainScreen.dart';
 import 'package:autism_final_project/PageView.dart';
 import 'package:autism_final_project/lunchScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import 'Controller/RouteSetting/RoutesApplication.dart';
 
@@ -19,7 +21,8 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-      return MaterialApp(
+      return GetMaterialApp(
+        initialBinding: GetBinding(),
         locale: const Locale('ar'),
         debugShowCheckedModeBanner: false,
          onGenerateRoute: AppRouts.OnGenerateRout,
