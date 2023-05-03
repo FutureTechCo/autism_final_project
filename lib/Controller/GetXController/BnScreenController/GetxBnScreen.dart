@@ -1,3 +1,4 @@
+import 'package:autism_final_project/MainScreens/BnScreen/Check.dart';
 import 'package:autism_final_project/MainScreens/BnScreen/Community.dart';
 import 'package:autism_final_project/MainScreens/BnScreen/Home.dart';
 import 'package:autism_final_project/MainScreens/BnScreen/Profile.dart';
@@ -9,9 +10,7 @@ class BnScreen extends GetxController{
  List<Widget> body = [
    Home(),
    Community(),
-   Center(
-     child: Text('message'),
-   ),
+   Check(),
    Profile()
  ];
  int selectIndex = 0;

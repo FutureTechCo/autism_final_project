@@ -1,3 +1,4 @@
+import 'package:autism_final_project/MainScreens/BnScreen/Edit.dart';
 import 'package:autism_final_project/WidgetsApplications/WidgetCommunity/WidgetPost.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -38,12 +39,20 @@ class Profile extends StatelessWidget {
                       blurRadius: 6)
                 ]),
             child: Padding(
-              padding:EdgeInsets.symmetric(horizontal: 15.h),
+              padding: EdgeInsets.symmetric(horizontal: 15.h),
               child: Row(
                 children: [
                   TextButton.icon(
-                    onPressed: () {},
-                    icon: Icon(Icons.border_color_outlined,weight: 24.spMin,color: Colors.black,),
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => Edit(),
+                      ));
+                    },
+                    icon: Icon(
+                      Icons.border_color_outlined,
+                      weight: 24.spMin,
+                      color: Colors.black,
+                    ),
                     label: Text(
                       'تعديل',
                       style: TextStyle(
@@ -53,7 +62,7 @@ class Profile extends StatelessWidget {
                           fontFamily: ConstVariable.FontFamily),
                     ),
                   ),
-                 Spacer(),
+                  Spacer(),
                   Text(
                     'مرحبا محمد المبحوح',
                     style: TextStyle(
@@ -75,28 +84,34 @@ class Profile extends StatelessWidget {
           SizedBox(height: 24.h),
           Row(
             children: [
-              Text('(15)',
+              Text(
+                '(15)',
                 style: TextStyle(
                   fontSize: 16.sp,
                   fontWeight: FontWeight.bold,
                   color: ColorUtils.l273262,
                   fontFamily: ConstVariable.FontFamily,
-                ),),
+                ),
+              ),
               Spacer(),
-              Text('منشوراتك',
+              Text(
+                'منشوراتك',
                 style: TextStyle(
                   fontSize: 16.sp,
                   fontWeight: FontWeight.bold,
                   color: ColorUtils.l273262,
                   fontFamily: ConstVariable.FontFamily,
-                ),)
+                ),
+              )
             ],
           ),
           SizedBox(height: 24.h),
           Expanded(
               child: ListView.separated(
                   itemBuilder: (context, index) => PostWidget(),
-                  separatorBuilder: (context, index) => SizedBox(height: 16.h,),
+                  separatorBuilder: (context, index) => SizedBox(
+                        height: 16.h,
+                      ),
                   itemCount: 21))
         ],
       ),
