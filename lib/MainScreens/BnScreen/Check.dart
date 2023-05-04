@@ -2,10 +2,20 @@ import 'package:autism_final_project/Utils/const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../Utils/ColorApp.dart';
+
 class Check extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: double.infinity,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+            begin: Alignment.center,
+            end: Alignment.bottomRight,
+            colors: [ColorUtils.BAE5EF, ColorUtils.FF657F_lite]),
+      ),
       padding: EdgeInsets.only(top: 48.h, right: 21.w, left: 21.w),
       child: Column(
         children: [

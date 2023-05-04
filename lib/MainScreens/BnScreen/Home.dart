@@ -29,31 +29,41 @@ class Home extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Container(
-                        height: 35.h,
-                        width: 35.w,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(35)),
-                        child: Icon(
-                          Icons.search,
-                          size: 24.w,
-                          color: Colors.blue,
+                      InkWell(
+                        onTap: (){
+                          Navigator.pushNamed(context,routapp.SearchScreen);
+                        },
+                        child: Container(
+                          height: 35.h,
+                          width: 35.w,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(35)),
+                          child: Icon(
+                            Icons.search,
+                            size: 24.w,
+                            color: Colors.blue,
+                          ),
                         ),
                       ),
                       SizedBox(
                         width: 8.w,
                       ),
-                      Container(
-                        height: 35.h,
-                        width: 35.w,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(35)),
-                        child: Icon(
-                          Icons.notifications_none,
-                          size: 24.w,
-                          color: Colors.blue,
+                      InkWell(
+                       onTap: (){
+                         Navigator.pushNamed(context,routapp.NotificationScreen);
+                       },
+                        child: Container(
+                          height: 35.h,
+                          width: 35.w,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(35)),
+                          child: Icon(
+                            Icons.notifications_none,
+                            size: 24.w,
+                            color: Colors.blue,
+                          ),
                         ),
                       ),
                     ],
@@ -224,37 +234,42 @@ class Home extends StatelessWidget {
                       SizedBox(
                         width: 16.w,
                       ),
-                      Container(
-                        height: 100.h,
-                        width: 100.w,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.r),
-                            boxShadow: const [
-                              BoxShadow(
-                                  color: Color(0x29000000),
-                                  offset: Offset(0, 3),
-                                  blurRadius: 6)
-                            ]),
-                        padding: EdgeInsets.only(top: 10.h),
-                        child: Column(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8)),
-                              height: 60.h,
-                              width: 60.w,
-                              child: Image.asset('assets/media.png'),
-                            ),
-                            SizedBox(height: 5.h),
-                            SizedBox(
-                              height: 19.h,
-                              child: Text('فيديوهات تعليمية',
-                                  style: TextStyle(
-                                      fontSize: 10.sp,
-                                      fontWeight: FontWeight.w600)),
-                            ),
-                          ],
+                      InkWell(
+                        onTap: (){
+                          Navigator.pushNamed(context, routapp.VideoLevelScreen);
+                        },
+                        child: Container(
+                          height: 100.h,
+                          width: 100.w,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(8.r),
+                              boxShadow: const [
+                                BoxShadow(
+                                    color: Color(0x29000000),
+                                    offset: Offset(0, 3),
+                                    blurRadius: 6)
+                              ]),
+                          padding: EdgeInsets.only(top: 10.h),
+                          child: Column(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8)),
+                                height: 60.h,
+                                width: 60.w,
+                                child: Image.asset('assets/media.png'),
+                              ),
+                              SizedBox(height: 5.h),
+                              SizedBox(
+                                height: 19.h,
+                                child: Text('فيديوهات تعليمية',
+                                    style: TextStyle(
+                                        fontSize: 10.sp,
+                                        fontWeight: FontWeight.w600)),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],

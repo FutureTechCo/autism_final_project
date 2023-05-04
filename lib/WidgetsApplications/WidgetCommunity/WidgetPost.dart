@@ -5,7 +5,9 @@ import '../../Utils/ColorApp.dart';
 import '../../Utils/const.dart';
 
 class PostWidget extends StatelessWidget {
-    PostWidget({Key? key}) : super(key: key);
+  bool? mypost = false;
+
+  PostWidget({Key? key, this.mypost}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,23 +36,28 @@ class PostWidget extends StatelessWidget {
                     fontFamily: ConstVariable.FontFamily,
                   ),
                 ),
-                subtitle:BnScreen.to.selectIndex == 3?null:Text(
-                  'قبل ساعتين',
-                  style: TextStyle(
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w400,
-                    color: ColorUtils.l273262,
-                    fontFamily: ConstVariable.FontFamily,
-                  ),
-                ),
-                leading: BnScreen.to.selectIndex == 3?null:CircleAvatar(
-                  radius: 22.r,
-                  foregroundImage: AssetImage('assets/face.png'),
-                ),
+                subtitle: BnScreen.to.selectIndex == 3
+                    ? null
+                    : Text(
+                        'قبل ساعتين',
+                        style: TextStyle(
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w400,
+                          color: ColorUtils.l273262,
+                          fontFamily: ConstVariable.FontFamily,
+                        ),
+                      ),
+                leading: BnScreen.to.selectIndex == 3
+                    ? null
+                    : CircleAvatar(
+                        radius: 22.r,
+                        foregroundImage: AssetImage('assets/face.png'),
+                      ),
                 trailing: IconButton(
-                    onPressed: () {}, icon: Icon(
-                    BnScreen.to.selectIndex != 3? Icons.bookmark_outline:Icons.more_horiz
-                )),
+                    onPressed: () {},
+                    icon: Icon(BnScreen.to.selectIndex != 3
+                        ? Icons.bookmark_outline
+                        : Icons.more_horiz)),
               ),
             ),
             SizedBox(
@@ -68,52 +75,57 @@ class PostWidget extends StatelessWidget {
             SizedBox(
               height: 16.h,
             ),
-            Row(
-              children: [
-                TextButton.icon(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.thumb_up_alt_outlined,
-                      color: Colors.grey,
-                    ),
-                    label: Text(
-                      '230',
-                      style: TextStyle(
-                          color: Colors.grey,
-                          fontFamily: ConstVariable.FontFamily,
-                          fontSize: 13.sp),
-                    )),
-                Spacer(),
-                TextButton.icon(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.visibility_outlined,
-                      color: Colors.grey,
-                    ),
-                    label: Text(
-                      '230',
-                      style: TextStyle(
-                          color: Colors.grey,
-                          fontFamily: ConstVariable.FontFamily,
-                          fontSize: 13.sp),
-                    )),
-                TextButton.icon(
-                    onPressed: () {
-                      show(context);
-                    },
-                    icon: Icon(
-                      Icons.add_comment_outlined,
-                      color: Colors.grey,
-                    ),
-                    label: Text(
-                      '230',
-                      style: TextStyle(
-                          color: Colors.grey,
-                          fontFamily: ConstVariable.FontFamily,
-                          fontSize: 13.sp),
-                    ))
-              ],
-            )
+            !mypost!
+                ? Row(
+                    children: [
+                      TextButton.icon(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.thumb_up_alt_outlined,
+                            color: Colors.grey,
+                          ),
+                          label: Text(
+                            '230',
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontFamily: ConstVariable.FontFamily,
+                                fontSize: 13.sp),
+                          )),
+                      Spacer(),
+                      TextButton.icon(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.visibility_outlined,
+                            color: Colors.grey,
+                          ),
+                          label: Text(
+                            '230',
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontFamily: ConstVariable.FontFamily,
+                                fontSize: 13.sp),
+                          )),
+                      TextButton.icon(
+                          onPressed: () {
+                            show(context);
+                          },
+                          icon: Icon(
+                            Icons.add_comment_outlined,
+                            color: Colors.grey,
+                          ),
+                          label: Text(
+                            '230',
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontFamily: ConstVariable.FontFamily,
+                                fontSize: 13.sp),
+                          ))
+                    ],
+                  )
+                : SizedBox(
+                    width: 0.h,
+                    height: 0.w,
+                  )
           ],
         ),
       ),
@@ -164,7 +176,7 @@ class PostWidget extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 24.h),
                   child: Container(
-                     width: 327.w,
+                    width: 327.w,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(8.r),
@@ -175,8 +187,8 @@ class PostWidget extends StatelessWidget {
                               blurRadius: 6)
                         ]),
                     child: Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 10.h, vertical: 10.h),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 10.h, vertical: 10.h),
                       child: Column(
                         children: [
                           Directionality(
@@ -305,8 +317,8 @@ class PostWidget extends StatelessWidget {
                                                 border: InputBorder.none,
                                                 hintText: 'اكتب تعليق....',
                                                 hintStyle: TextStyle(
-                                                    fontFamily:
-                                                        ConstVariable.FontFamily,
+                                                    fontFamily: ConstVariable
+                                                        .FontFamily,
                                                     fontWeight: FontWeight.w400,
                                                     fontSize: 14.sp)),
                                           ),
@@ -369,7 +381,7 @@ class PostWidget extends StatelessWidget {
                           SizedBox(
                             height: 16.h,
                           ),
-                          for(int i = 0; i < 22 ; i++)
+                          for (int i = 0; i < 22; i++)
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Row(
@@ -381,7 +393,8 @@ class PostWidget extends StatelessWidget {
                                           color: Colors.white,
                                           borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(16.r),
-                                              bottomRight: Radius.circular(16.r),
+                                              bottomRight:
+                                                  Radius.circular(16.r),
                                               topLeft: Radius.circular(16.r),
                                               topRight: Radius.zero),
                                           border: Border.all(
@@ -390,8 +403,10 @@ class PostWidget extends StatelessWidget {
                                       child: Padding(
                                         padding: const EdgeInsets.all(8.0),
                                         child: Column(
-                                          crossAxisAlignment: CrossAxisAlignment.end,
-                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.end,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
                                           children: [
                                             Text(
                                               'محمد المبحوح',
@@ -399,7 +414,8 @@ class PostWidget extends StatelessWidget {
                                                 fontSize: 14.sp,
                                                 fontWeight: FontWeight.bold,
                                                 color: ColorUtils.l273262,
-                                                fontFamily: ConstVariable.FontFamily,
+                                                fontFamily:
+                                                    ConstVariable.FontFamily,
                                               ),
                                             ),
                                             Text(
@@ -408,7 +424,8 @@ class PostWidget extends StatelessWidget {
                                                 fontSize: 12.sp,
                                                 fontWeight: FontWeight.w400,
                                                 color: ColorUtils.l273262,
-                                                fontFamily: ConstVariable.FontFamily,
+                                                fontFamily:
+                                                    ConstVariable.FontFamily,
                                               ),
                                               textAlign: TextAlign.end,
                                             ),
@@ -422,7 +439,8 @@ class PostWidget extends StatelessWidget {
                                   ),
                                   CircleAvatar(
                                     radius: 22.r,
-                                    foregroundImage: AssetImage('assets/face.png'),
+                                    foregroundImage:
+                                        AssetImage('assets/face.png'),
                                   ),
                                 ],
                               ),

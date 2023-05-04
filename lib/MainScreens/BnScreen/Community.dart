@@ -89,7 +89,7 @@ class Community extends StatelessWidget {
             SizedBox(height: 24.h),
             Expanded(
                 child: ListView.separated(
-                    itemBuilder: (context, index) => PostWidget(),
+                    itemBuilder: (context, index) => PostWidget(mypost: false),
                     separatorBuilder: (context, index) => SizedBox(height: 16.h,),
                     itemCount: 21))
           ],

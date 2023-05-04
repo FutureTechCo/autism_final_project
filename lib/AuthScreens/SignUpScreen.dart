@@ -165,7 +165,9 @@ class SignUpScreen extends StatelessWidget {
                 height: 18.h,
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context,routapp.ImageUserScreen);
+                },
                 child: Text(
                   'تسجيل',
                   style: TextStyle(

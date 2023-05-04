@@ -201,7 +201,7 @@ class _PageViewScreenState extends State<PageViewScreen> {
                            Navigator.pushReplacementNamed(context, routapp.LoginScreen);
                          }
                          },
-                       child:Icon(Icons.arrow_back_ios))
+                       child:Icon(Icons.arrow_back_ios_new))
                  ],
                   )
               ],

@@ -13,29 +13,24 @@ class Edit extends StatelessWidget {
         padding: EdgeInsets.only(top: 16.h, left: 24.w, right: 24.w),
         child: ListView(
           children: [
-            Container(
-              height: 97.h,
-              padding: EdgeInsets.only(left: 85.w),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  IconButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      icon: Icon(
-                        Icons.arrow_right_alt_sharp,
-                      )),
-                  SizedBox(
-                    width: 50.w,
-                  ),
-                  Text(
-                    "تعديل الملف الشخصي",
-                    style:
-                        TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
+            Row(
+              children: [
+                SizedBox(
+                  width: 13.w,
+                ),
+                GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Icon(Icons.arrow_right_alt)),
+                Spacer(flex: 4),
+                Text('تعديل الملف الشخصي',
+                    style: TextStyle(
+                        fontFamily: ConstVariable.FontFamily,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 20.sp)),
+                Spacer(flex: 4),
+              ],
             ),
             SizedBox(
               height: 16.h,

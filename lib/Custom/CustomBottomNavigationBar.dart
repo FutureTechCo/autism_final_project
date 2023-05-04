@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../Utils/ColorApp.dart';
+
 class CustomBottomNavigationBar extends StatelessWidget {
 
   int selectedIndex;
@@ -17,13 +19,19 @@ class CustomBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // height: double.infinity,
+      // width: double.infinity,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(30.r),
+        gradient: LinearGradient(
+            begin: Alignment.center,
+            end: Alignment.bottomRight,
+            colors: [ColorUtils.BAE5EF, ColorUtils.FF657F_lite]),
+      ),
       margin: EdgeInsets.only(left: 21.w, right: 21.w, bottom: 21.h),
       width: 333.w,
       height: 60.h,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30.r),
-        color: backgroundColor,
-      ),
+
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -36,8 +44,8 @@ class CustomBottomNavigationBar extends StatelessWidget {
               height: 40.h,
               decoration:  selectedIndex == 0
                   ? BoxDecoration(
-                      borderRadius: BorderRadius.circular(30.r),
-                      color: Colors.red)
+                  borderRadius: BorderRadius.circular(30.r),
+                  color: Colors.red)
                   : const BoxDecoration(),
               child: Icon(
                 Icons.home_outlined,
@@ -55,8 +63,8 @@ class CustomBottomNavigationBar extends StatelessWidget {
               height: 40.h,
               decoration:  selectedIndex == 1
                   ? BoxDecoration(
-                      borderRadius: BorderRadius.circular(30.r),
-                      color: Colors.red)
+                  borderRadius: BorderRadius.circular(30.r),
+                  color: Colors.red)
                   : const BoxDecoration(),
               child: Icon(
                 Icons.language,
@@ -74,8 +82,8 @@ class CustomBottomNavigationBar extends StatelessWidget {
               height: 40.h,
               decoration:  selectedIndex == 2
                   ? BoxDecoration(
-                      borderRadius: BorderRadius.circular(30.r),
-                      color: Colors.red)
+                  borderRadius: BorderRadius.circular(30.r),
+                  color: Colors.red)
                   : const BoxDecoration(),
               child: Icon(
                 Icons.message_outlined,
@@ -93,8 +101,8 @@ class CustomBottomNavigationBar extends StatelessWidget {
               height: 40.h,
               decoration:  selectedIndex == 3
                   ? BoxDecoration(
-                      borderRadius: BorderRadius.circular(30.r),
-                      color: Colors.red)
+                  borderRadius: BorderRadius.circular(30.r),
+                  color: Colors.red)
                   : const BoxDecoration(),
               child: Icon(
                 Icons.person_2_outlined,
