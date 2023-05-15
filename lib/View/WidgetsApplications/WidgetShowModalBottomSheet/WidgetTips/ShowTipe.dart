@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ShowTip {
-  static void show(BuildContext context) {
+  static void show(BuildContext context,String description) {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -62,8 +62,8 @@ class ShowTip {
                         child: Column(
                           children: [
                             Text(
-                              'هذا النص هو مثال لنص يمكن أن يستبدل في نفس هذا النص هو مثال لنص يمكن أن يستبدل في نفس هذا النص هو مثال لنص يمكن أن يستبدل في نفس هذا النص هو مثال لنص يمكن أن يستبدل في نفس هذا النص هو مثال لنص يمكن أن يستبدل في نفس ',
-                              style: TextStyle(
+                              description,
+                               style: TextStyle(
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w400,
                                 color: ColorUtils.l273262,
