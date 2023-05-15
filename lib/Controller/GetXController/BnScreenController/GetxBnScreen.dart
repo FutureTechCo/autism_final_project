@@ -1,7 +1,7 @@
-import 'package:autism_final_project/MainScreens/BnScreen/Check.dart';
-import 'package:autism_final_project/MainScreens/BnScreen/Community.dart';
-import 'package:autism_final_project/MainScreens/BnScreen/Home.dart';
-import 'package:autism_final_project/MainScreens/BnScreen/Profile.dart';
+import 'package:autism_final_project/View/MainScreens/BnScreen/Check.dart';
+import 'package:autism_final_project/View/MainScreens/BnScreen/Community.dart';
+import 'package:autism_final_project/View/MainScreens/BnScreen/Home.dart';
+import 'package:autism_final_project/View/MainScreens/BnScreen/Profile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

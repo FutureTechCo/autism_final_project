@@ -1,24 +1,26 @@
-import 'package:autism_final_project/AuthScreens/ConfirmationScreen.dart';
-import 'package:autism_final_project/AuthScreens/LoginScreen.dart';
-import 'package:autism_final_project/AuthScreens/NewPasswordScreen.dart';
-import 'package:autism_final_project/AuthScreens/OtpCodeScreen.dart';
-import 'package:autism_final_project/AuthScreens/ResetPasswordScreen.dart';
-import 'package:autism_final_project/AuthScreens/SignUpScreen.dart';
-import 'package:autism_final_project/AuthScreens/image_user.dart';
-import 'package:autism_final_project/AuthScreens/phone_user.dart';
-import 'package:autism_final_project/AuthScreens/started.dart';
-import 'package:autism_final_project/MainScreens/BnScreen/Home.dart';
-import 'package:autism_final_project/MainScreens/MainScreen.dart';
-import 'package:autism_final_project/PageView.dart';
-import 'package:autism_final_project/Search.dart';
-import 'package:autism_final_project/WidgetsApplications/WidgetCourse/VideoCourse.dart';
-import 'package:autism_final_project/WidgetsApplications/WidgetCourse/VideosLevels.dart';
-import 'package:autism_final_project/WidgetsApplications/WidgetCourse/WatchVideo.dart';
-import 'package:autism_final_project/WidgetsApplications/WidgetDoctors/DoctorsScreen.dart';
-import 'package:autism_final_project/WidgetsApplications/WidgetProfile/MyPost.dart';
-import 'package:autism_final_project/WidgetsApplications/WidgetProfile/Notification.dart';
-import 'package:autism_final_project/WidgetsApplications/WidgetService/ServiceScreen.dart';
-import 'package:autism_final_project/lunchScreen.dart';
+import 'package:autism_final_project/View/WidgetsApplications/WidgetAuth/ConfirmationScreen.dart';
+import 'package:autism_final_project/View/WidgetsApplications/WidgetAuth/LoginScreen.dart';
+import 'package:autism_final_project/View/WidgetsApplications/WidgetAuth/NewPasswordScreen.dart';
+import 'package:autism_final_project/View/WidgetsApplications/WidgetAuth/OtpCodeScreen.dart';
+import 'package:autism_final_project/View/WidgetsApplications/WidgetAuth/ResetPasswordScreen.dart';
+import 'package:autism_final_project/View/WidgetsApplications/WidgetAuth/SignUpScreen.dart';
+import 'package:autism_final_project/View/WidgetsApplications/WidgetAuth/image_user.dart';
+import 'package:autism_final_project/View/WidgetsApplications/WidgetAuth/phone_user.dart';
+import 'package:autism_final_project/View/WidgetsApplications/WidgetAuth/started.dart';
+import 'package:autism_final_project/View/MainScreens/BnScreen/Home.dart';
+import 'package:autism_final_project/View/MainScreens/MainScreen.dart';
+import 'package:autism_final_project/View/PageView.dart';
+import 'package:autism_final_project/View/Search.dart';
+import 'package:autism_final_project/View/WidgetsApplications/WidgetCourse/VideoCourse.dart';
+import 'package:autism_final_project/View/WidgetsApplications/WidgetCourse/VideosLevels.dart';
+import 'package:autism_final_project/View/WidgetsApplications/WidgetCourse/WatchVideo.dart';
+import 'package:autism_final_project/View/WidgetsApplications/WidgetDoctors/DoctorsScreen.dart';
+import 'package:autism_final_project/View/WidgetsApplications/WidgetDoctors/Dr.DoctorsScreen.dart';
+import 'package:autism_final_project/View/WidgetsApplications/WidgetProfile/MyPost.dart';
+import 'package:autism_final_project/View/WidgetsApplications/WidgetProfile/Notification.dart';
+import 'package:autism_final_project/View/WidgetsApplications/WidgetService/ServiceScreen.dart';
+import 'package:autism_final_project/View/WidgetsApplications/WidgetTips/TipsScreen.dart';
+import 'package:autism_final_project/View/lunchScreen.dart';
 import 'package:flutter/material.dart';
 
 class routapp {
@@ -43,6 +45,8 @@ class routapp {
   static const String VideoCourseScreen = '/VideoCourseScreen';
   static const String NotificationScreen = '/NotificationScreen';
   static const String SearchScreen = '/SearchScreen';
+  static const String TipsScreen = '/TipsScreen';
+  static const String DrDoctorScreen = '/DrDoctorScreen';
 }
 
 class AppRouts {
@@ -130,6 +134,14 @@ class AppRouts {
       case routapp.SearchScreen:
         return MaterialPageRoute(
           builder: (context) => SearchScreen(),
+        );
+        case routapp.TipsScreen:
+        return MaterialPageRoute(
+          builder: (context) => TipsScreen(),
+        );
+        case routapp.DrDoctorScreen:
+        return MaterialPageRoute(
+          builder: (context) => DrDoctorScreen(),
         );
       default:
         return null;
