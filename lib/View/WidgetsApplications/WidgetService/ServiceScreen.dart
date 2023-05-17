@@ -7,9 +7,9 @@ import '../../Utils/const.dart';
 class ServiceScreen extends StatelessWidget {
     ServiceScreen({Key? key}) : super(key: key);
   List iamges = [
-    'assets/discussion.png',
-    'assets/test.png',
-    'assets/media.png'
+    'images/discussion.png',
+    'images/test.png',
+    'images/media.png'
   ];
   List name = [
     'نصائح',

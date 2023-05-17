@@ -47,7 +47,7 @@ class PhoneUser extends StatelessWidget {
                 height: 24 * 2.h,
               ),
               Image.asset(
-                'assets/phone.png',
+                'images/phone.png',
                 width: 221.w,
                 height: 221.h,
               ),

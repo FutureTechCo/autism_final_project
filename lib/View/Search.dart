@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../View/Utils/ColorApp.dart';
 import '../../../View/Utils/const.dart';
 

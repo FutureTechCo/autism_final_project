@@ -41,7 +41,7 @@ class OtpCodeScreen extends StatelessWidget {
                 ],
               ),
               Image.asset(
-                'assets/otp.png',
+                'images/otp.png',
                 height: 235.h,
                 width: 156.w,
               ),

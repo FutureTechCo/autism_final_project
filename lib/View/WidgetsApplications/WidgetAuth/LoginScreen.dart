@@ -24,7 +24,7 @@ class LoginScreen extends StatelessWidget {
           child: ListView(
             children: [
               Image.asset(
-                'assets/logo.png',
+                'images/logo.png',
                 height: 155.h,
                 width: 82.w,
               ),

@@ -46,7 +46,7 @@ class NewPasswordScreen extends StatelessWidget {
                 height: 36.h,
               ),
               Image.asset(
-                'assets/newpass.png',
+                'images/newpass.png',
                 height: 155.h,
                 width: 82.w,
               ),

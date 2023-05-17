@@ -38,7 +38,7 @@ class _LunchScreenState extends State<LunchScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/logo.png'),
+            Image.asset('images/logo.png'),
           ],
         ),
       )

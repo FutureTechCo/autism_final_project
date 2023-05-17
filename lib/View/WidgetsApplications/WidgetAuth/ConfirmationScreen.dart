@@ -25,7 +25,7 @@ class ConfirmationScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
                Image.asset(
-                'assets/success.png',
+                'images/success.png',
                 height: 235.h,
                 width: 156.w,
               ),

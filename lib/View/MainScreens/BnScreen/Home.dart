@@ -85,7 +85,7 @@ class Home extends StatelessWidget {
                       ),
                       CircleAvatar(
                         radius: 22.r,
-                        foregroundImage: AssetImage('assets/face.png'),
+                        foregroundImage: AssetImage('images/face.png'),
                       ),
                     ],
                   ),
@@ -104,7 +104,7 @@ class Home extends StatelessWidget {
                 child: Column(
                   children: [
                     Image.asset(
-                      'assets/home1.png',
+                      'images/home1.png',
                       width: 56.w,
                       height: 64.h,
                     ),
@@ -191,7 +191,7 @@ class Home extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(8)),
                                 height: 60.h,
                                 width: 60.w,
-                                child: Image.asset('assets/discussion.png'),
+                                child: Image.asset('images/discussion.png'),
                               ),
                               SizedBox(height: 5.h),
                               SizedBox(
@@ -228,7 +228,7 @@ class Home extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(8)),
                               height: 60.h,
                               width: 60.w,
-                              child: Image.asset('assets/test.png'),
+                              child: Image.asset('images/test.png'),
                             ),
                             SizedBox(height: 5.h),
                             SizedBox(
@@ -268,7 +268,7 @@ class Home extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(8)),
                                 height: 60.h,
                                 width: 60.w,
-                                child: Image.asset('assets/media.png'),
+                                child: Image.asset('images/media.png'),
                               ),
                               SizedBox(height: 5.h),
                               SizedBox(
@@ -309,21 +309,21 @@ class Home extends StatelessWidget {
                   Row(
                     children: [
                       CustomDoctorCard(
-                          image: 'assets/doctor.png',
+                          image: 'images/doctor.png',
                           name: 'د. محمد المبحوح',
                           location: 'غزة-بيرالنعجة'),
                       SizedBox(
                         width: 16.w,
                       ),
                       CustomDoctorCard(
-                          image: 'assets/doctor.png',
+                          image: 'images/doctor.png',
                           name: 'د. محمد المبحوح',
                           location: 'غزة-بيرالنعجة'),
                       SizedBox(
                         width: 16.w,
                       ),
                       CustomDoctorCard(
-                          image: 'assets/doctor.png',
+                          image: 'images/doctor.png',
                           name: 'د. محمد المبحوح',
                           location: 'غزة-بيرالنعجة'),
                     ],

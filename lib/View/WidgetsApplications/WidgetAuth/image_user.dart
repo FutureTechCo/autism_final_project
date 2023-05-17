@@ -45,7 +45,7 @@ class ImageUser extends StatelessWidget {
                 height: 24 * 2.h,
               ),
               Image.asset(
-                'assets/image.png',
+                'images/image.png',
                 width: 180.w,
                 height: 180.h,
               ),

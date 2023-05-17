@@ -64,7 +64,7 @@ class TestResult {
                             child: Column(
                               children: [
                                 Image.asset(
-                                  'assets/home1.png',
+                                  'images/home1.png',
                                   width: 56.w,
                                   height: 64.h,
                                 ),

@@ -1,6 +1,10 @@
+import 'package:autism_final_project/Controller/GetXController/GetXHomeUser/GetXHomeUserController.dart';
 import 'package:autism_final_project/Controller/RouteSetting/RoutesApplication.dart';
+import 'package:autism_final_project/Model/ModelLevels.dart';
+import 'package:autism_final_project/View/WidgetsApplications/WidgetCourse/VideoCourse.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import '../../Utils/ColorApp.dart';
 import '../../Utils/const.dart';
@@ -22,7 +26,7 @@ class VideoLevel extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          title:Text('الفيديوهات',
+          title: Text('الفيديوهات',
               style: TextStyle(
                   fontFamily: ConstVariable.FontFamily,
                   fontWeight: FontWeight.w700,
@@ -32,67 +36,102 @@ class VideoLevel extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
               },
-              child: Icon(Icons.arrow_right_alt,color: ColorUtils.l273262,)),
+              child: Icon(
+                Icons.arrow_right_alt,
+                color: ColorUtils.l273262,
+              )),
           centerTitle: true,
           backgroundColor: Colors.transparent,
           elevation: 0,
         ),
-        body: Padding(
-          padding:   EdgeInsets.symmetric(horizontal: 24.h),
-          child: Column(
-            children: [
-              Text(
-                  'هذا النص هو مثال لنص يمكن أن يستبدل\n في نفس المساحة، لقد تم توليد هذا النص\n من مولد النص العربى',
-                  style: TextStyle(
-                      fontFamily: ConstVariable.FontFamily,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 14.sp),
-                  textAlign: TextAlign.center),
-              SizedBox(height: 24.h,),
-              Expanded(child: ListView.separated(itemBuilder: (context, index) {
-                  return InkWell(
-                    onTap: (){
-                      Navigator.pushNamed(context, routapp.VideoCourseScreen);
-                    },
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 8.h),
-                      child: Container(
-                        width: 327.w,
-                        height: 60.h,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.r),
-                            border: Border.all(
-                              color: ColorUtils.FF657F,
-                            ),
-                            boxShadow: const [
-                              BoxShadow(
-                                  color: Color(0x29000000),
-                                  offset: Offset(0, 3),
-                                  blurRadius: 6)
-                            ]),
-                        child: Padding(
-                          padding: EdgeInsets.only(right: 24.h),
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: Text(
-                              'المرحلة ${++index}',
-                              style: TextStyle(
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                                color: ColorUtils.FF657F,
-                                fontFamily: ConstVariable.FontFamily,
+        body: GetBuilder<GetXHomeUserController>(
+          id: 'Levels',
+          builder: (controller) => Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24.h),
+            child: Column(
+              children: [
+                Text(
+                    'هذا النص هو مثال لنص يمكن أن يستبدل\n في نفس المساحة، لقد تم توليد هذا النص\n من مولد النص العربى',
+                    style: TextStyle(
+                        fontFamily: ConstVariable.FontFamily,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 14.sp),
+                    textAlign: TextAlign.center),
+                SizedBox(
+                  height: 24.h,
+                ),
+                Expanded(
+                    child: FutureBuilder<List<levels_model_response>>(
+                  future: controller.GetXGetAllLevels(),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData &&
+                        controller.ObjectLevels_model_response.length > 0) {
+                      return ListView.separated(
+                          itemBuilder: (context, index) {
+                            return InkWell(
+                              onTap: () {
+                                Navigator.push(context,
+                                MaterialPageRoute(builder: (context) => VideoCourse(name:controller.ObjectLevels_model_response[index].name,categories: controller.ObjectLevels_model_response[index].categories),));
+                              },
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 8.h),
+                                child: Container(
+                                  width: 327.w,
+                                  height: 60.h,
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(8.r),
+                                      border: Border.all(
+                                        color: ColorUtils.FF657F,
+                                      ),
+                                      boxShadow: const [
+                                        BoxShadow(
+                                            color: Color(0x29000000),
+                                            offset: Offset(0, 3),
+                                            blurRadius: 6)
+                                      ]),
+                                  child: Padding(
+                                    padding: EdgeInsets.only(right: 24.h),
+                                    child: Align(
+                                      alignment: Alignment.center,
+                                      child: Text(
+                                        controller
+                                            .ObjectLevels_model_response[index]
+                                            .name,
+                                        style: TextStyle(
+                                          fontSize: 16.sp,
+                                          fontWeight: FontWeight.bold,
+                                          color: ColorUtils.FF657F,
+                                          fontFamily: ConstVariable.FontFamily,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  );
-              }, separatorBuilder: (context, index) {
-                   return SizedBox(height: 16.h,);
-              }, itemCount: 5))
-            ],
+                            );
+                          },
+                          separatorBuilder: (context, index) {
+                            return SizedBox(
+                              height: 16.h,
+                            );
+                          },
+                          itemCount:
+                              controller.ObjectLevels_model_response.length);
+                    } else if (snapshot.connectionState ==
+                        ConnectionState.waiting) {
+                      return Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    } else {
+                      return Center(
+                        child: Text('404'),
+                      );
+                    }
+                  },
+                ))
+              ],
+            ),
           ),
         ),
       ),

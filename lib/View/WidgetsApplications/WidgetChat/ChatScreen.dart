@@ -103,7 +103,7 @@ class ChatScreen extends StatelessWidget {
                         CircleAvatar(
                           radius: 22.r,
                           foregroundImage:
-                          AssetImage('assets/face.png'),
+                          AssetImage('images/face.png'),
                         ),
                       ],
                     ),
@@ -121,7 +121,7 @@ class ChatScreen extends StatelessWidget {
                     CircleAvatar(
                       radius: 22.r,
                       foregroundImage:
-                      AssetImage('assets/face.png'),
+                      AssetImage('images/face.png'),
                     ),
                     SizedBox(width: 10.w,),
                     Container(

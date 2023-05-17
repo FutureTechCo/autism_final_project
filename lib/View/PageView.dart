@@ -64,7 +64,7 @@ class _PageViewScreenState extends State<PageViewScreen> {
                           child: Column(
                            children: [
                              Image.asset(
-                               'assets/pageview1.png',
+                               'images/pageview1.png',
                                width: 328.57.w,
                                height: 242.1.h,
                              ),
@@ -92,7 +92,7 @@ class _PageViewScreenState extends State<PageViewScreen> {
                             child: Column(
                               children: [
                                 Image.asset(
-                                  'assets/pageview2.png',
+                                  'images/pageview2.png',
                                   width: 342.04.w,
                                   height: 224.01.h,
                                 ),
@@ -120,7 +120,7 @@ class _PageViewScreenState extends State<PageViewScreen> {
                           child: Column(
                             children: [
                               Image.asset(
-                                'assets/pageview3.png',
+                                'images/pageview3.png',
                                 width: 188.87.w,
                                 height: 227.53.h,
                               ),

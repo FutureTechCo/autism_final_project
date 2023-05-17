@@ -74,7 +74,7 @@ class DoctorsScreen extends StatelessWidget {
                     crossAxisSpacing: 16.h),
                 itemBuilder: (context, index) {
                   return CustomDoctorCard(
-                      image: 'assets/doctor.png',
+                      image: 'images/doctor.png',
                       name: 'د. محمد المبحوح',
                       location: 'غزة-بيرالنعجة');
                 },

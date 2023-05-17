@@ -41,7 +41,7 @@ class ResetPasswordScreen extends StatelessWidget {
                 ],
               ),
               Image.asset(
-                'assets/respass.png',
+                'images/respass.png',
                 height: 235.h,
                 width: 156.w,
               ),

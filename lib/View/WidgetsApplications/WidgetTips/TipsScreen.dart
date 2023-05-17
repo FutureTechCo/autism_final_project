@@ -22,18 +22,18 @@ class _TipsScreenState extends State<TipsScreen> {
   @override
   void initState() {
     scrollController = ScrollController();
-    scrollController.addListener(() async {
-      if (scrollController.position.pixels ==
-          scrollController.position.maxScrollExtent) {
-        setState(() {
-          next++;
-        });
-        var t = await GetXHomeUserController.to
-            .GetXGetAllAdvice(page: next.toString());
-      } else {
-        log('s');
-      }
-    });
+    // scrollController.addListener(() async {
+    //   if (scrollController.position.pixels ==
+    //       scrollController.position.maxScrollExtent) {
+    //     setState(() {
+    //       next++;
+    //     });
+    //     var t = await GetXHomeUserController.to
+    //         .GetXGetAllAdvice(page: next.toString());
+    //   } else {
+    //     log('s');
+    //   }
+    // });
     // TODO: implement initState
     super.initState();
   }
@@ -83,57 +83,78 @@ class _TipsScreenState extends State<TipsScreen> {
           builder: (controller) => FutureBuilder<ModelAdvice>(
             future: controller.GetXGetAllAdvice(),
             builder: (context, snapshot) {
-              if (snapshot.hasData && controller.ObjectDataAdvice.results > 0) {
-                return Padding(
+              if (snapshot.hasData && controller.ObjectDataAdvice.results! > 0) {
+                 return Padding(
                     padding: EdgeInsets.symmetric(horizontal: 24.h),
                     child: ListView.separated(
                         shrinkWrap: true,
                         controller: scrollController,
                         itemBuilder: (context, index) {
-                          return InkWell(
-                            onTap: () {
-                              ShowTip.show(context,controller.ObjectDataAdvice.data[index].advice);
-                            },
-                            child: Container(
-                              width: 327.w,
-                              height: 42.h,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(8.r),
+
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                controller.ObjectDataAdvice.data![index].titel!,
+                                style: TextStyle(
+                                    fontFamily: ConstVariable.FontFamily,
+                                    fontWeight: FontWeight.w700,
+                                    color: ColorUtils.l273262,
+                                    fontSize: 16.sp),
                               ),
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 10.h),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      controller.ObjectDataAdvice.data[index].titel,
-                                      style: TextStyle(
-                                          fontFamily: ConstVariable.FontFamily,
-                                          fontWeight: FontWeight.w700,
-                                          color: ColorUtils.l273262,
-                                          fontSize: 12.sp),
-                                    ),
-                                    Container(
-                                      width: 20.w,
-                                      height: 20.h,
+                              SizedBox(height: 16.h,),
+                              ...controller.ObjectDataAdvice.data![index].adices!.map((e){
+                                return Padding(
+                                  padding:  EdgeInsets.only(bottom: 2*8.h),
+                                  child: InkWell(
+                                    onTap: () {
+                                       ShowTip.show(context,e.titel!);
+                                    },
+                                    child: Container(
+                                      width: 327.w,
+                                      height: 42.h,
                                       decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(90.r),
-                                          color: ColorUtils.FF657F),
-                                      child: Center(
-                                        child: Icon(
-                                          Icons.arrow_forward,
-                                          size: 12.spMin,
-                                          color: Colors.white,
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(8.r),
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(horizontal: 10.h),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              e.titel!,
+                                              style: TextStyle(
+                                                  fontFamily: ConstVariable.FontFamily,
+                                                  fontWeight: FontWeight.w700,
+                                                  color: ColorUtils.l273262,
+                                                  fontSize: 12.sp),
+                                            ),
+                                            Container(
+                                              width: 20.w,
+                                              height: 20.h,
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                  BorderRadius.circular(90.r),
+                                                  color: ColorUtils.FF657F),
+                                              child: Center(
+                                                child: Icon(
+                                                  Icons.arrow_forward,
+                                                  size: 12.spMin,
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                            )
+                                          ],
                                         ),
                                       ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
+                                    ),
+                                  ),
+                                );
+
+                              })
+                            ],
                           );
                         },
                         separatorBuilder: (context, index) {
@@ -141,7 +162,7 @@ class _TipsScreenState extends State<TipsScreen> {
                             height: 16.h,
                           );
                         },
-                        itemCount: controller.ObjectDataAdvice.results));
+                        itemCount: controller.ObjectDataAdvice.results!));
               } else if (snapshot.connectionState == ConnectionState.waiting) {
                 return Center(
                   child: CircularProgressIndicator(),

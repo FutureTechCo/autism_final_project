@@ -23,6 +23,8 @@ import 'package:autism_final_project/View/WidgetsApplications/WidgetTips/TipsScr
 import 'package:autism_final_project/View/lunchScreen.dart';
 import 'package:flutter/material.dart';
 
+import '../../Model/ModelLevels.dart';
+
 class routapp {
   static const String initialRoute = '/';
   static const String pageViewRoutScreen = '/PageViewScreen';
@@ -121,11 +123,11 @@ class AppRouts {
         );
       case routapp.WatchVideoScreen:
         return MaterialPageRoute(
-          builder: (context) => WatchVideo(),
+          builder: (context) => WatchVideo(object: Videos()),
         );
       case routapp.VideoCourseScreen:
         return MaterialPageRoute(
-          builder: (context) => VideoCourse(),
+          builder: (context) => VideoCourse(categories: [],name: ''),
         );
       case routapp.NotificationScreen:
         return MaterialPageRoute(

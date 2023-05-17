@@ -1,13 +1,16 @@
-import 'dart:developer';
 import 'package:autism_final_project/Controller/RouteSetting/RoutesApplication.dart';
+import 'package:autism_final_project/Model/ModelLevels.dart';
+import 'package:autism_final_project/View/WidgetsApplications/WidgetCourse/WatchVideo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 
 import '../../Utils/ColorApp.dart';
 import '../../Utils/const.dart';
 
 class VideoCourse extends StatefulWidget {
+  late List<Categories> categories;
+  late String name;
+  VideoCourse({required this.categories,required this.name});
   @override
   State<VideoCourse> createState() => _VideoCourseState();
 }
@@ -29,7 +32,7 @@ class _VideoCourseState extends State<VideoCourse> {
       child: Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
-            title: Text('المرحلة الاولى',
+            title: Text(widget.name,
                 style: TextStyle(
                     fontFamily: ConstVariable.FontFamily,
                     fontWeight: FontWeight.w700,
@@ -52,163 +55,101 @@ class _VideoCourseState extends State<VideoCourse> {
             child: Column(
               children: [
                 SizedBox(
+                  width: double.infinity.w,
                   height: 10.h,
                 ),
-                Row(
-                  children: [
-                    SizedBox(
-                      width: 20.w,
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        height: 34.h,
-                        width: 34.w,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.blueAccent,
+                Padding(
+                  padding: EdgeInsets.all(8.0.h),
+                  child: SizedBox(
+                    height: 573.99.h,
+                    width: 324.w,
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 3.h,
                         ),
-                        child: Icon(
-                          Icons.navigate_before,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    Spacer(),
-                    Container(
-                      child: Text(
-                        '1 / 10',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 18.sp),
-                      ),
-                    ),
-                    Spacer(),
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        height: 34.h,
-                        width: 34.w,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.blueAccent,
-                        ),
-                        child: Icon(
-                          Icons.navigate_next,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 20.w,
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 15.h,
-                ),
-                SizedBox(
-                  height: 573.99.h,
-                  width: 324.w,
-                  child: PageView(
-                    clipBehavior: Clip.antiAlias,
-                    controller: pageController,
-                    onPageChanged: (int selectedPage) {},
-                    children: <Widget>[
-                      for (int i = 0; i < 10; i++)
-                        Padding(
-                          padding: EdgeInsets.all(8.0.h),
-                          child: SizedBox(
-                            height: 573.99.h,
-                            width: 324.w,
-                            child: Column(
-                              children: [
-                                SizedBox(
-                                  height: 3.h,
+                        Container(
+                          height: 41.98.h,
+                          width: 321.w,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(10.r),
+                                topRight: Radius.circular(10.r),
+                              ),
+                              border: Border.all(
+                                  color: Color(0xff3A7FC4)),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Color(0xff3A7FC4),
+                                  spreadRadius: 2,
+                                )
+                              ]),
+                          child: Center(
+                              child: Text(
+                                'المحتويات',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20.sp,
+                                  fontFamily: 'Arial',
                                 ),
-                                Container(
-                                  height: 41.98.h,
-                                  width: 321.w,
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(10.r),
-                                        topRight: Radius.circular(10.r),
+                              )),
+                        ),
+                        for (int j = 0; j < widget.categories.length; j++)
+                          Row(
+                            children: [
+                              Container(
+                                height: 44,
+                                width: 57,
+                                decoration: BoxDecoration(
+                                    color: Color(0xff3A7FC4),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Color(0xff7899DC),
+                                        spreadRadius: 2,
+                                      )
+                                    ]),
+                                child: Center(
+                                    child: Text(
+                                      widget.categories[j].letter,
+                                      style: TextStyle(
+                                        fontSize: 25,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
                                       ),
-                                      border: Border.all(
-                                          color: Color(0xff3A7FC4)),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Color(0xff3A7FC4),
-                                          spreadRadius: 2,
-                                        )
-                                      ]),
-                                  child: Center(
-                                      child: Text(
-                                    'A-$i',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20.sp,
-                                      fontFamily: 'Arial',
-                                    ),
-                                  )),
-                                ),
-                                for (int j = 0; j < 10; j++)
-                                  Row(
-                                    children: [
-                                      Container(
-                                        height: 44,
-                                        width: 57,
-                                        decoration: BoxDecoration(
-                                            color: Color(0xff3A7FC4),
-                                            boxShadow: [
-                                              BoxShadow(
-                                                color: Color(0xff7899DC),
-                                                spreadRadius: 2,
-                                              )
-                                            ]),
-                                        child: Center(
-                                            child: Text(
-                                              's - $j',
-                                              style: TextStyle(
-                                                fontSize: 25,
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                            )),
-                                      ),
-                                      for (int k = 0; k < 3; k++)
-                                        Expanded(
-                                          child: InkWell(
-                                            onTap: ()  {
-                                              Navigator.pushNamed(context, routapp.WatchVideoScreen);
-                                            },
-                                            child: Container(
-                                              height: 44,
-                                              width: 57,
-                                              decoration: BoxDecoration(
-                                                  border: Border.all(
-                                                      color: Color(0xffA6A6A6))),
-                                              child: Center(
-                                                child: Text(
-                                                  'N - ${k + 1}',
-                                                  style: TextStyle(
-                                                    color: Color(0xffA6A6A6),
-                                                    fontSize: 16,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
+                                    )),
+                              ),
+                              for (int k = 0; k < widget.categories[j].videos.length; k++)
+                                Expanded(
+                                  child: InkWell(
+                                    onTap: ()  {
+                                      Navigator.push(context,
+                                      MaterialPageRoute(builder: (context) => WatchVideo(object:widget.categories[j].videos[k]),));
+                                    },
+                                    child: Container(
+                                      height: 44,
+                                      width: 57,
+                                      decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: Color(0xffA6A6A6))),
+                                      child: Center(
+                                        child: Text(
+                                          widget.categories[j].videos[k].mission_number,
+                                          style: TextStyle(
+                                            color: Color(0xffA6A6A6),
+                                            fontSize: 16,
                                           ),
                                         ),
-                                    ],
-                                  )
-                              ],
-                            ),
-                          ),
-                        )
-                    ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                            ],
+                          )
+                      ],
+                    ),
                   ),
-                ),
+                )
               ],
             ),
           ))),

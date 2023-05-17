@@ -51,7 +51,7 @@ class Edit extends StatelessWidget {
                   SizedBox(
                       height: 101.h,
                       child: Image.asset(
-                        "assets/face.png",
+                        "images/face.png",
                         fit: BoxFit.fitHeight,
                       )),
                   SizedBox(
