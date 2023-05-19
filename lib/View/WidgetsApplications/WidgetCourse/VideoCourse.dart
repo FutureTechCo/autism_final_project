@@ -10,7 +10,9 @@ import '../../Utils/const.dart';
 class VideoCourse extends StatefulWidget {
   late List<Categories> categories;
   late String name;
-  VideoCourse({required this.categories,required this.name});
+
+  VideoCourse({required this.categories, required this.name});
+
   @override
   State<VideoCourse> createState() => _VideoCourseState();
 }
@@ -52,7 +54,7 @@ class _VideoCourseState extends State<VideoCourse> {
           ),
           body: SafeArea(
               child: SingleChildScrollView(
-            child: Column(
+            child:Column(
               children: [
                 SizedBox(
                   width: double.infinity.w,
@@ -77,8 +79,7 @@ class _VideoCourseState extends State<VideoCourse> {
                                 topLeft: Radius.circular(10.r),
                                 topRight: Radius.circular(10.r),
                               ),
-                              border: Border.all(
-                                  color: Color(0xff3A7FC4)),
+                              border: Border.all(color: ColorUtils.l273262),
                               boxShadow: [
                                 BoxShadow(
                                   color: Color(0xff3A7FC4),
@@ -95,6 +96,7 @@ class _VideoCourseState extends State<VideoCourse> {
                                 ),
                               )),
                         ),
+                        SizedBox(height: 4.h,),
                         for (int j = 0; j < widget.categories.length; j++)
                           Row(
                             children: [
@@ -119,12 +121,19 @@ class _VideoCourseState extends State<VideoCourse> {
                                       ),
                                     )),
                               ),
-                              for (int k = 0; k < widget.categories[j].videos.length; k++)
+                              for (int k = 0;
+                              k < widget.categories[j].videos.length;
+                              k++)
                                 Expanded(
                                   child: InkWell(
-                                    onTap: ()  {
-                                      Navigator.push(context,
-                                      MaterialPageRoute(builder: (context) => WatchVideo(object:widget.categories[j].videos[k]),));
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => WatchVideo(
+                                                object: widget
+                                                    .categories[j].videos[k]),
+                                          ));
                                     },
                                     child: Container(
                                       height: 44,
@@ -134,7 +143,8 @@ class _VideoCourseState extends State<VideoCourse> {
                                               color: Color(0xffA6A6A6))),
                                       child: Center(
                                         child: Text(
-                                          widget.categories[j].videos[k].mission_number,
+                                          widget.categories[j].videos[k]
+                                              .mission_number,
                                           style: TextStyle(
                                             color: Color(0xffA6A6A6),
                                             fontSize: 16,

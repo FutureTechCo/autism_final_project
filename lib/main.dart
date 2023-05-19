@@ -1,6 +1,7 @@
 import 'package:autism_final_project/Controller/GetXController/GetXBinding.dart';
 import 'package:autism_final_project/View/MainScreens/MainScreen.dart';
 import 'package:autism_final_project/View/PageView.dart';
+import 'package:autism_final_project/View/WidgetsApplications/WidgetCourse/CreatePdfFile.dart';
 import 'package:autism_final_project/View/lunchScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,6 +10,8 @@ import 'package:get/get.dart';
 import 'Controller/RouteSetting/RoutesApplication.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  createPdf.init();
   runApp(const MyApp());
 }
 

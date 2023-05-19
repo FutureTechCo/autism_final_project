@@ -14,6 +14,7 @@ class Profile extends StatelessWidget {
     'حول التطبيق',
     'مشاركة التطبيق',
     'تقييم التطبيق',
+    'التقرير',
     'الدعم الفني',
     'تسجيل الخروج',
   ];
@@ -120,6 +121,8 @@ class Profile extends StatelessWidget {
                     onTap: (){
                       if(index == 1 || title[index] == 'منشوراتك'){
                         Navigator.pushNamed(context, routapp.MyPostScreen);
+                      }else if(index == 5){
+                        Navigator.pushNamed(context, routapp.UserReport);
                       }
                     },
                     child: Padding(

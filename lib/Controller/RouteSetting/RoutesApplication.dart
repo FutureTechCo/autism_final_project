@@ -11,6 +11,7 @@ import 'package:autism_final_project/View/MainScreens/BnScreen/Home.dart';
 import 'package:autism_final_project/View/MainScreens/MainScreen.dart';
 import 'package:autism_final_project/View/PageView.dart';
 import 'package:autism_final_project/View/Search.dart';
+import 'package:autism_final_project/View/WidgetsApplications/WidgetCourse/UserReport.dart';
 import 'package:autism_final_project/View/WidgetsApplications/WidgetCourse/VideoCourse.dart';
 import 'package:autism_final_project/View/WidgetsApplications/WidgetCourse/VideosLevels.dart';
 import 'package:autism_final_project/View/WidgetsApplications/WidgetCourse/WatchVideo.dart';
@@ -49,6 +50,7 @@ class routapp {
   static const String SearchScreen = '/SearchScreen';
   static const String TipsScreen = '/TipsScreen';
   static const String DrDoctorScreen = '/DrDoctorScreen';
+  static const String UserReport = '/UserReport';
 }
 
 class AppRouts {
@@ -144,6 +146,9 @@ class AppRouts {
         case routapp.DrDoctorScreen:
         return MaterialPageRoute(
           builder: (context) => DrDoctorScreen(),
+        ); case routapp.UserReport:
+        return MaterialPageRoute(
+          builder: (context) => UserReport(),
         );
       default:
         return null;

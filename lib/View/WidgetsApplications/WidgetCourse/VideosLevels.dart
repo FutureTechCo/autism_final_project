@@ -61,63 +61,71 @@ class VideoLevel extends StatelessWidget {
                   height: 24.h,
                 ),
                 Expanded(
-                    child: FutureBuilder<List<levels_model_response>>(
+                  child: FutureBuilder<List<levels_model_response>>(
                   future: controller.GetXGetAllLevels(),
                   builder: (context, snapshot) {
-                    if (snapshot.hasData &&
-                        controller.ObjectLevels_model_response.length > 0) {
+                    if (snapshot.hasData && snapshot.data!.isNotEmpty) {
                       return ListView.separated(
-                          itemBuilder: (context, index) {
-                            return InkWell(
-                              onTap: () {
-                                Navigator.push(context,
-                                MaterialPageRoute(builder: (context) => VideoCourse(name:controller.ObjectLevels_model_response[index].name,categories: controller.ObjectLevels_model_response[index].categories),));
-                              },
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 8.h),
-                                child: Container(
-                                  width: 327.w,
-                                  height: 60.h,
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(8.r),
-                                      border: Border.all(
-                                        color: ColorUtils.FF657F,
-                                      ),
-                                      boxShadow: const [
-                                        BoxShadow(
-                                            color: Color(0x29000000),
-                                            offset: Offset(0, 3),
-                                            blurRadius: 6)
-                                      ]),
-                                  child: Padding(
-                                    padding: EdgeInsets.only(right: 24.h),
-                                    child: Align(
-                                      alignment: Alignment.center,
-                                      child: Text(
-                                        controller
+                        itemCount: snapshot.data!.length,
+                        itemBuilder: (context, index) {
+                          return InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => VideoCourse(
+                                        name: controller
                                             .ObjectLevels_model_response[index]
                                             .name,
-                                        style: TextStyle(
-                                          fontSize: 16.sp,
-                                          fontWeight: FontWeight.bold,
-                                          color: ColorUtils.FF657F,
-                                          fontFamily: ConstVariable.FontFamily,
-                                        ),
+                                        categories: controller
+                                            .ObjectLevels_model_response[index]
+                                            .categories),
+                                  ));
+                            },
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 8.h),
+                              child: Container(
+                                width: 327.w,
+                                height: 60.h,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(8.r),
+                                    border: Border.all(
+                                      color: ColorUtils.FF657F,
+                                    ),
+                                    boxShadow: const [
+                                      BoxShadow(
+                                          color: Color(0x29000000),
+                                          offset: Offset(0, 3),
+                                          blurRadius: 6)
+                                    ]),
+                                child: Padding(
+                                  padding: EdgeInsets.only(right: 24.h),
+                                  child: Align(
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      controller
+                                          .ObjectLevels_model_response[index]
+                                          .name,
+                                      style: TextStyle(
+                                        fontSize: 16.sp,
+                                        fontWeight: FontWeight.bold,
+                                        color: ColorUtils.FF657F,
+                                        fontFamily: ConstVariable.FontFamily,
                                       ),
                                     ),
                                   ),
                                 ),
                               ),
-                            );
-                          },
-                          separatorBuilder: (context, index) {
-                            return SizedBox(
-                              height: 16.h,
-                            );
-                          },
-                          itemCount:
-                              controller.ObjectLevels_model_response.length);
+                            ),
+                          );
+                        },
+                        separatorBuilder: (context, index) {
+                          return SizedBox(
+                            height: 16.h,
+                          );
+                        },
+                      );
                     } else if (snapshot.connectionState ==
                         ConnectionState.waiting) {
                       return Center(
