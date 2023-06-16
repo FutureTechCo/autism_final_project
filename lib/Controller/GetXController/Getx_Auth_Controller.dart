@@ -52,7 +52,6 @@ class LoginGetx extends GetxController with Helper {
     name_SignUp_Controller.text='';
     phone_SignUp_Controller.text='';
   }
-
   /*LoginFunsction*/
   Future<void> Login(BuildContext context) async {
     if (CheckPasswordAndEmail().Check(
