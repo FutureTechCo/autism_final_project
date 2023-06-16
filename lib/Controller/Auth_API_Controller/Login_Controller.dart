@@ -19,7 +19,6 @@ class Login_Controller with Helper {
         required String email,
         required String password}) async {
     var url = Uri.parse(RootApi.login);
-
     var resp = await http.post(url, body: {
       'email':email,
       'password':password,

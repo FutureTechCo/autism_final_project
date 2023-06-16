@@ -1,7 +1,11 @@
 
+import 'dart:developer';
+
+import 'package:flutter/material.dart';
+
 import 'HelperError.dart';
 class CheckPasswordAndEmail with Helper {
-  bool Check(String password, String p, String e, context,) {
+  bool Check({required String password,required  String p,required  String e,required BuildContext context}) {
     if (password.length < 6) {
       ShowSnackBar(context: context, Error: false, Message: 'كلمه السر قصيرة');
       return false;

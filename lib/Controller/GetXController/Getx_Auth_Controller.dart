@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -26,8 +28,8 @@ class LoginGetx extends GetxController with Helper {
 
   /*SignInFunsction*/
   Future<void> SignIn(BuildContext context) async {
-    if (CheckPasswordAndEmail().Check(Password_SignUp_Controller.text,
-        Password_SignUp_Controller.text, Email_SignUp_Controller.text, context)) {
+    if (CheckPasswordAndEmail().Check(password: Password_SignUp_Controller.text,
+        p: Password_SignUp_Controller.text, e: Email_SignUp_Controller.text,context:  context)) {
       await SinUp_Controller()
           .SinUp(
           context: context,
@@ -38,7 +40,7 @@ class LoginGetx extends GetxController with Helper {
           .then((value) {
            Navigator.pushNamed(context, '/ImageUserScreen') ;
         clear();
-        print(value);
+        log('Message Users => ${value}');
        // Navigator.pushReplacementNamed(context, '/InformationScreen');
       });
     }
@@ -53,8 +55,11 @@ class LoginGetx extends GetxController with Helper {
 
   /*LoginFunsction*/
   Future<void> Login(BuildContext context) async {
-    if (CheckPasswordAndEmail().Check(Password_SignUp_Controller.text,
-        Password_SignUp_Controller.text, Email_SignUp_Controller.text, context)) {
+    if (CheckPasswordAndEmail().Check(
+        password: Password_Login_Controller.text,
+        p: Password_Login_Controller.text,
+        e: Email_Login_Controller.text,
+        context: context)) {
       await Login_Controller()
           .login(
           context: context,

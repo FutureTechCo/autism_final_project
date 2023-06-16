@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:autism_final_project/Controller/RouteSetting/RoutesApplication.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:autism_final_project/View/Utils/ColorApp.dart';
@@ -26,7 +27,9 @@ class StartedScreen extends StatelessWidget {
               Spacer(),
               Center(
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context,routapp.MainScreen);
+                  },
                   child: Text(
                     'بدأ',
                     style: TextStyle(
