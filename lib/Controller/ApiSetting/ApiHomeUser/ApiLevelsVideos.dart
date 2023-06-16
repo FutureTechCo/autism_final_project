@@ -24,7 +24,7 @@ class ApiLevelsVideos with Helper {
     }
     return [];
   }
-
+//Error == false ? Colors.red:Colors.green
   ///======WatchVideo Function======///
   Future<void> WatchVideo(
       {required BuildContext context,
@@ -32,15 +32,15 @@ class ApiLevelsVideos with Helper {
       required String vid}) async {
     if (userId == '1') {
       ShowSnackBar(
-          context: context, Message: 'يجب عليك الدخول باستخدام الحساب');
+          context: context, Message: 'يجب عليك الدخول باستخدام الحساب',Error: false);
     } else {
       var url = Uri.parse(RootApi.watch);
       var response =
           await http.post(url, body: {'cus_id': uid, 'video_id': vid});
       if (response.statusCode == 200) {
-        ShowSnackBar(context: context, Message: 'لم يتم المشاهدة');
+        ShowSnackBar(context: context, Message: 'لم يتم المشاهدة',Error: true);
       } else if (response.statusCode == 201) {
-        ShowSnackBar(context: context, Message: 'تم المشاهدة');
+        ShowSnackBar(context: context, Message: 'تم المشاهدة', Error: true);
       }
     }
   }

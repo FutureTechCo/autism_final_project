@@ -2,14 +2,21 @@ import 'package:autism_final_project/Controller/GetXController/GetXBinding.dart'
 import 'package:autism_final_project/View/MainScreens/MainScreen.dart';
 import 'package:autism_final_project/View/PageView.dart';
 import 'package:autism_final_project/View/WidgetsApplications/WidgetCourse/CreatePdfFile.dart';
-import 'package:autism_final_project/View/lunchScreen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import 'Controller/GetXController/Getx_Auth_Controller.dart';
 import 'Controller/RouteSetting/RoutesApplication.dart';
+import 'Controller/SharedPreferences/SharedPreferences.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
+  Get.put(LoginGetx());
+  SharedPreferencesApp().MethodeInitSharedPref();
   WidgetsFlutterBinding.ensureInitialized();
   createPdf.init();
   runApp(const MyApp());

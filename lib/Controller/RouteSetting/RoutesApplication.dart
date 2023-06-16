@@ -21,10 +21,11 @@ import 'package:autism_final_project/View/WidgetsApplications/WidgetProfile/MyPo
 import 'package:autism_final_project/View/WidgetsApplications/WidgetProfile/Notification.dart';
 import 'package:autism_final_project/View/WidgetsApplications/WidgetService/ServiceScreen.dart';
 import 'package:autism_final_project/View/WidgetsApplications/WidgetTips/TipsScreen.dart';
-import 'package:autism_final_project/View/lunchScreen.dart';
 import 'package:flutter/material.dart';
 
 import '../../Model/ModelLevels.dart';
+
+import '../../View/lunchScreen.dart';
 
 class routapp {
   static const String initialRoute = '/';
@@ -57,7 +58,7 @@ class AppRouts {
   static Route? OnGenerateRout(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case routapp.initialRoute:
-        return MaterialPageRoute(builder: (context) => LunchScreen());
+        return MaterialPageRoute(builder: (context) =>LunchScreen());
       case routapp.pageViewRoutScreen:
         return MaterialPageRoute(
           builder: (context) => const PageViewScreen(),

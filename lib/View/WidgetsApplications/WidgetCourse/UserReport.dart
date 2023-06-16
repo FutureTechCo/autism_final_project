@@ -1,5 +1,4 @@
 import 'package:autism_final_project/Controller/ApiSetting/ApiHomeUser/ApiLevelsVideos.dart';
-import 'package:autism_final_project/Controller/GetXController/GetXHomeUser/GetXHomeUserController.dart';
 import 'package:autism_final_project/View/Utils/ColorApp.dart';
 import 'package:autism_final_project/View/Utils/const.dart';
 import 'package:autism_final_project/View/WidgetsApplications/WidgetCourse/CreatePdfFile.dart';
@@ -7,6 +6,8 @@ import 'package:autism_final_project/View/WidgetsApplications/WidgetCourse/Widge
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
+import '../../../Controller/GetXController/GetX_Videos/GetXHomeUserController.dart';
 
 class UserReport extends StatefulWidget {
   const UserReport({Key? key}) : super(key: key);

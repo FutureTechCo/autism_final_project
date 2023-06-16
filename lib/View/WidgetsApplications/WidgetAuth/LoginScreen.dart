@@ -4,6 +4,8 @@ import 'package:autism_final_project/View/Utils/const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../Controller/GetXController/Getx_Auth_Controller.dart';
+
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
@@ -59,6 +61,7 @@ class LoginScreen extends StatelessWidget {
                       child: Directionality(
                         textDirection: TextDirection.rtl,
                         child: TextField(
+                          controller:LoginGetx().to. Email_Login_Controller,
                           decoration: InputDecoration(
                               border: InputBorder.none,
                               hintText: 'البريد الالكتروني',
@@ -81,6 +84,7 @@ class LoginScreen extends StatelessWidget {
                       child: Directionality(
                         textDirection: TextDirection.rtl,
                         child: TextField(
+                          controller:LoginGetx().to.Password_Login_Controller,
                           decoration: InputDecoration(
                               border: InputBorder.none,
                               hintText: 'كلمة السر',
@@ -123,8 +127,8 @@ class LoginScreen extends StatelessWidget {
                 height: 18.h,
               ),
               ElevatedButton(
-                onPressed: () {
-                  Navigator.pushReplacementNamed(context, routapp.MainScreen);
+                onPressed: ()async {
+                 await LoginGetx().to.Login(context);
                 },
                 child: Text(
                   'دخول',

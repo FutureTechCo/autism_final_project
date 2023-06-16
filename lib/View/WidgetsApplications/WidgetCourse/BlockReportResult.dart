@@ -1,6 +1,5 @@
 
 import 'package:autism_final_project/Controller/ApiSetting/ApiHomeUser/ApiLevelsVideos.dart';
-import 'package:autism_final_project/Controller/GetXController/GetXHomeUser/GetXHomeUserController.dart';
 import 'package:autism_final_project/Model/ModelLevels.dart';
 import 'package:autism_final_project/View/Utils/ColorApp.dart';
 import 'package:autism_final_project/View/Utils/const.dart';
@@ -9,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 
+import '../../../Controller/GetXController/GetX_Videos/GetXHomeUserController.dart';
 import '../../../Model/ModelReportUser.dart';
 
 class block_reselt extends StatelessWidget {

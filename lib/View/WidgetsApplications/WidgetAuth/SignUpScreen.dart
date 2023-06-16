@@ -4,6 +4,8 @@ import 'package:autism_final_project/View/Utils/const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../Controller/GetXController/Getx_Auth_Controller.dart';
+
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({Key? key}) : super(key: key);
 
@@ -57,6 +59,7 @@ class SignUpScreen extends StatelessWidget {
                       child: Directionality(
                         textDirection: TextDirection.rtl,
                         child: TextField(
+                          controller: LoginGetx().to.name_SignUp_Controller,
                           decoration: InputDecoration(
                               border: InputBorder.none,
                               hintText: 'الاسم كامل',
@@ -79,6 +82,8 @@ class SignUpScreen extends StatelessWidget {
                       child: Directionality(
                         textDirection: TextDirection.rtl,
                         child: TextField(
+                          controller: LoginGetx().to.phone_SignUp_Controller,
+
                           decoration: InputDecoration(
                               border: InputBorder.none,
                               hintText: 'رقم الجوال',
@@ -101,6 +106,7 @@ class SignUpScreen extends StatelessWidget {
                           child: Directionality(
                             textDirection: TextDirection.rtl,
                             child: TextField(
+                              controller: LoginGetx().to.Email_SignUp_Controller,
                               decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: 'البريد الالكتروني',
@@ -123,6 +129,7 @@ class SignUpScreen extends StatelessWidget {
                           child: Directionality(
                             textDirection: TextDirection.rtl,
                             child: TextField(
+                              controller: LoginGetx().to.Password_SignUp_Controller,
                               decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: 'كلمة السر',
@@ -165,8 +172,8 @@ class SignUpScreen extends StatelessWidget {
                 height: 18.h,
               ),
               ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context,routapp.ImageUserScreen);
+                onPressed: () async {
+                    await  LoginGetx().to.SignIn(context);
                 },
                 child: Text(
                   'تسجيل',
@@ -194,7 +201,7 @@ class SignUpScreen extends StatelessWidget {
                       fontSize: 14.sp)),
               GestureDetector(
                 onTap: () {
-                  Navigator.pop(context);
+
                 },
                 child: Text('دخول',
                     textAlign: TextAlign.center,

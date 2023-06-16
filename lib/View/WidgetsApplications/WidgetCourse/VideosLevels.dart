@@ -1,4 +1,3 @@
-import 'package:autism_final_project/Controller/GetXController/GetXHomeUser/GetXHomeUserController.dart';
 import 'package:autism_final_project/Controller/RouteSetting/RoutesApplication.dart';
 import 'package:autism_final_project/Model/ModelLevels.dart';
 import 'package:autism_final_project/View/WidgetsApplications/WidgetCourse/VideoCourse.dart';
@@ -6,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import '../../../Controller/GetXController/GetX_Videos/GetXHomeUserController.dart';
 import '../../Utils/ColorApp.dart';
 import '../../Utils/const.dart';
 

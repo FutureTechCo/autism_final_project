@@ -24,24 +24,24 @@ class _LunchScreenState extends State<LunchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.bottomCenter,
-              end: Alignment.center,
-              colors: [
-                ColorUtils.BAE5EF,
-                ColorUtils.FF657F_lite
-              ]),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset('images/logo.png'),
-          ],
-        ),
-      )
+        body:Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.bottomCenter,
+                end: Alignment.center,
+                colors: [
+                  ColorUtils.BAE5EF,
+                  ColorUtils.FF657F_lite
+                ]),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset('images/logo.png'),
+            ],
+          ),
+        )
     );
   }
 }

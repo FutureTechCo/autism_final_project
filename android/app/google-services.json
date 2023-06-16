@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "485316780484",
+    "project_id": "autism-project-api",
+    "storage_bucket": "autism-project-api.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485316780484:android:3409e7d8118cc37e7a8491",
+        "android_client_info": {
+          "package_name": "com.example.autism_final_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "485316780484-oq1idmvshto9ld9e85iu0pfc90ap0slc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBM1rNvn_SF1F2lrofRgEB_lkbKDEWIcUQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "485316780484-oq1idmvshto9ld9e85iu0pfc90ap0slc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "485316780484-7v8g0393lgc4kk4h7o9n3hgakhccje1k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.autismFinalProject"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
