@@ -7,7 +7,7 @@ class GetBinding extends Bindings{
   @override
   void dependencies() {
     // TODO: implement dependencies
-    Get.put(BnScreen());
+    Get.put(GetxBnScreen());
     Get.put(GetXHomeUserController());
   }
 

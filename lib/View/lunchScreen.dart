@@ -1,4 +1,5 @@
 import 'package:autism_final_project/Controller/RouteSetting/RoutesApplication.dart';
+import 'package:autism_final_project/Controller/SharedPreferences/SharedPreferences.dart';
 import 'package:autism_final_project/View/PageView.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,11 @@ class _LunchScreenState extends State<LunchScreen> {
   @override
   void initState() {
     Future.delayed(Duration(seconds: 2),() {
+      if(!SharedPreferencesApp().GetLlgin){
       Navigator.pushReplacementNamed(context,routapp.pageViewRoutScreen);
+      }else{
+        Navigator.pushReplacementNamed(context,routapp.MainScreen);
+      }
     },);
     // TODO: implement initState
     super.initState();

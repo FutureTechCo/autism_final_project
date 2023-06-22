@@ -1,4 +1,5 @@
 import 'package:autism_final_project/Controller/GetXController/BnScreenController/GetxBnScreen.dart';
+import 'package:autism_final_project/Model/ModelPosts.dart';
 import 'package:autism_final_project/View/WidgetsApplications/WidgetShowModalBottomSheet/WidgetPost/ShowPost.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,11 +8,15 @@ import '../../Utils/const.dart';
 
 class PostWidget extends StatelessWidget {
   bool? mypost = false;
-
-  PostWidget({Key? key, this.mypost}) : super(key: key);
+  Posts? posts;
+  PostWidget({Key? key, this.mypost,this.posts}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    DateTime newDate = DateTime.parse(posts!.createdAt);
+    String y = newDate.year.toString();
+    String d = newDate.day.toString();
+    String m = newDate.month.toString();
     return Container(
       width: 327.w,
       decoration: BoxDecoration(
@@ -29,7 +34,8 @@ class PostWidget extends StatelessWidget {
               textDirection: TextDirection.rtl,
               child: ListTile(
                 title: Text(
-                  'تاريخ النشر   26/4/2023',
+                  ' تاريخ النشر$d-$m-$y ',
+                  // '   26/4/2023',
                   style: TextStyle(
                     fontSize: 14.sp,
                     fontWeight: FontWeight.bold,
@@ -37,7 +43,7 @@ class PostWidget extends StatelessWidget {
                     fontFamily: ConstVariable.FontFamily,
                   ),
                 ),
-                subtitle: BnScreen.to.selectIndex == 3
+                subtitle: GetxBnScreen.to.selectIndex == 3
                     ? null
                     : Text(
                         'قبل ساعتين',
@@ -48,7 +54,7 @@ class PostWidget extends StatelessWidget {
                           fontFamily: ConstVariable.FontFamily,
                         ),
                       ),
-                leading: BnScreen.to.selectIndex == 3
+                leading: GetxBnScreen.to.selectIndex == 3
                     ? null
                     : CircleAvatar(
                         radius: 22.r,
@@ -56,7 +62,7 @@ class PostWidget extends StatelessWidget {
                       ),
                 trailing: IconButton(
                     onPressed: () {},
-                    icon: Icon(BnScreen.to.selectIndex != 3
+                    icon: Icon(GetxBnScreen.to.selectIndex != 3
                         ? Icons.bookmark_outline
                         : Icons.more_horiz)),
               ),
@@ -65,8 +71,8 @@ class PostWidget extends StatelessWidget {
               height: 8.h,
             ),
             Text(
-              'هذا النص هو مثال لنص يمكن أن يستبدل في نفس هذا النص هو مثال لنص يمكن أن يستبدل في نفس هذا النص هو مثال لنص يمكن أن يستبدل في نفس هذا النص هو مثال لنص يمكن أن يستبدل في نفس هذا النص هو مثال لنص يمكن أن يستبدل في نفس ',
-              style: TextStyle(
+              posts!.text,
+               style: TextStyle(
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w400,
                 color: ColorUtils.l273262,
@@ -86,7 +92,7 @@ class PostWidget extends StatelessWidget {
                             color: Colors.grey,
                           ),
                           label: Text(
-                            '230',
+                            posts!.like.toString(),
                             style: TextStyle(
                                 color: Colors.grey,
                                 fontFamily: ConstVariable.FontFamily,
@@ -100,22 +106,24 @@ class PostWidget extends StatelessWidget {
                             color: Colors.grey,
                           ),
                           label: Text(
-                            '230',
+                            posts!.views.toString(),
                             style: TextStyle(
                                 color: Colors.grey,
                                 fontFamily: ConstVariable.FontFamily,
                                 fontSize: 13.sp),
                           )),
                       TextButton.icon(
-                          onPressed: () {
-                            ShowPost.show(context);
+                          onPressed: () async{
+                          await  GetxBnScreen.to.GetAllCommentSpecificPost(id: posts!.sId ).then((value) {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => ShowPost(posts: posts),));
+                            });
                           },
                           icon: Icon(
                             Icons.add_comment_outlined,
                             color: Colors.grey,
                           ),
                           label: Text(
-                            '230',
+                            posts!.comment.toString(),
                             style: TextStyle(
                                 color: Colors.grey,
                                 fontFamily: ConstVariable.FontFamily,

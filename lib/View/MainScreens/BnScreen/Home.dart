@@ -124,7 +124,7 @@ class Home extends StatelessWidget {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        BnScreen.to.SetSelectIndex(2);
+                        GetxBnScreen.to.SetSelectIndex(2);
                         // TestResult.show(context);
                       },
                       style: ButtonStyle(

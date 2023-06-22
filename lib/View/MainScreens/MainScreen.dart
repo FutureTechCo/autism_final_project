@@ -11,7 +11,7 @@ import '../Utils/ColorApp.dart';
 class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<BnScreen>(
+    return GetBuilder<GetxBnScreen>(
       id: 'BnScreen',
       builder: (controller) => Container(
         height: double.infinity,

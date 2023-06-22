@@ -39,7 +39,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
           InkWell(
             onTap: () {
               // onItemTapped(0);
-              BnScreen.to.SetSelectIndex(0);
+              GetxBnScreen.to.SetSelectIndex(0);
             },
             child: Container(
               width: 40.w,
@@ -59,7 +59,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
           InkWell(
             onTap: () {
               // onItemTapped(1);
-              BnScreen.to.SetSelectIndex(1);
+              GetxBnScreen.to.SetSelectIndex(1);
             },
             child: Container(
               width: 40.w,
@@ -79,7 +79,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
           InkWell(
             onTap: () {
               // onItemTapped(2);
-              BnScreen.to.SetSelectIndex(2);
+              GetxBnScreen.to.SetSelectIndex(2);
 
             },
             child: Container(
@@ -100,7 +100,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
           InkWell(
             onTap: () {
               // onItemTapped(3);
-              BnScreen.to.SetSelectIndex(3);
+              GetxBnScreen.to.SetSelectIndex(3);
             },
             child: Container(
               width: 40.w,

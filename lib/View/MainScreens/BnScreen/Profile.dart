@@ -1,4 +1,5 @@
 import 'package:autism_final_project/Controller/RouteSetting/RoutesApplication.dart';
+import 'package:autism_final_project/Controller/SharedPreferences/SharedPreferences.dart';
 import 'package:autism_final_project/View/WidgetsApplications/WidgetProfile/Edit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -54,16 +55,17 @@ class Profile extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     radius: 22.r,
-                    foregroundImage: AssetImage('images/face.png'),
+                    foregroundImage: NetworkImage(SharedPreferencesApp().ImageUser),
                   ),
                   SizedBox(
                     width: 16.w,
                   ),
                   Text(
-                    'مرحبا محمد المبحوح',
+                    SharedPreferencesApp(). GetIdName,
                     style: TextStyle(
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w600,
+                        color: Colors.black54,
                         fontFamily: ConstVariable.FontFamily),
                   ),
                   Spacer(),

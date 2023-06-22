@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-
 import '../../Model/Error_Model.dart';
 import '../../Model/User_Model.dart';
 import '../../View/Utils/HelperError.dart';
